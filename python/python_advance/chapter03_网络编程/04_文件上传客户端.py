@@ -16,6 +16,9 @@ with open("C:\\Users\\86151\\Downloads\\桂洋.png", "rb") as f:
         if len(byte) == 0:
             break
 
+# 发送完毕关闭写端口
+client_socket.shutdown(socket.SHUT_WR)
+
 msg = client_socket.recv(1024).decode()
 
 print(msg)
